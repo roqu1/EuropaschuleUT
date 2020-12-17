@@ -2,8 +2,6 @@ package aufgabe;
 
 import java.io.IOException;
 
-import oop.IO;
-
 public class Matrizenrechnung {
 		
 		
