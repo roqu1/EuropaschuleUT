@@ -20,15 +20,10 @@ public class zellwachstum {
 
 		//Eingabe in der Console
 
-		do {
+		
 		for (int i=0 ; i <= laufzeit ; i++) {
 		double formel = zellmenge* Math.pow(wachstumsfaktor, i);
 		System.out.println(i+ "         " + formel);
 		}
-		//Ausgabe in der Console
-		System.out.println("Soll die Berechung wiederholt werden?");
-		}	
-		while (IO.readBoolean());
-		System.out.println("Danke für die Teilnahme");
-		}
+	}
 }
