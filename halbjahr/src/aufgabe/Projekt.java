@@ -1,24 +1,16 @@
 package aufgabe;
 
-
-
 import java.io.IOException;
-
-
 
 import oop.IO;
 
-
-
 public class Projekt {
-
-
 
 	public static void main(String[] args) throws IOException {
 		boolean beenden=true;
+
 		do {
 			System.out.println("\r\n"
-
 					+ "   ▄▄▄▄███▄▄▄▄      ▄████████     ███        ▄█    █▄            ▄██████▄   ▄██████▄  ████████▄     ▄████████ \r\n"
 					+ " ▄██▀▀▀███▀▀▀██▄   ███    ███ ▀█████████▄   ███    ███          ███    ███ ███    ███ ███   ▀███   ███    ███ \r\n"
 					+ " ███   ███   ███   ███    ███    ▀███▀▀██   ███    ███          ███    █▀  ███    ███ ███    ███   ███    █▀  \r\n"
@@ -39,13 +31,9 @@ public class Projekt {
 			System.out.println("[4]-Für Matrizenrechnung (2-dimensionale Arrays)");
 			System.out.println("[5]-Für Statistische Auswertungen");
 			System.out.println("[6]-Für Um das Programm zu beenden");
-
 			int eingabe = IO.readInteger();
 
-
-
 			if(eingabe==1) { // Zellwachstum
-
 				System.out.println("\r\n"
 						+ " __          __        _         _                                                       \r\n"
 						+ " \\ \\        / /       | |       | |                                                      \r\n"
@@ -56,26 +44,29 @@ public class Projekt {
 						+ "                                                        | |                              \r\n"
 						+ "                                                        |_|                              \r\n"
 						+ "");
-
 				System.out.println();
+				boolean weiter=true;
+				do {
+				
+				
 				System.out.println("Bitte die aktuelle Zellmenge eingeben:" );
 				double zellmenge = IO.readDouble();
 				System.out.println("Bitte den Wachstumsfaktor eingeben:" );
 				double wachstumsfaktor = IO.readDouble();
 				System.out.println("Bitte die Laufzeit der Hochrechnung in Tagen eingeben:" );
 				double laufzeit = IO.readDouble();
-
 				System.out.println("Tage      Zellmenge");
 				zellwachstum.main(zellmenge, wachstumsfaktor, laufzeit);
 				System.out.println();
-
+				System.out.println("Soll das Programm wiederholt werden? ");
+				weiter=IO.readBoolean();
+				
 			}
-
-
+			while (weiter==true);
+			}
 
 			if(eingabe==2)// quadratischer Gleichungen
 			{
-
 				System.out.println("\r\n"
 						+ "                        _           _   _          _              _____ _      _      _                                  \r\n"
 						+ "                       | |         | | (_)        | |            / ____| |    (_)    | |                                 \r\n"
@@ -86,8 +77,9 @@ public class Projekt {
 						+ "     | |                                                                                                 __/ |           \r\n"
 						+ "     |_|                                                                                                |___/            \r\n"
 						+ "");
+				boolean weiter=true;
+				do {
 				System.out.print("Geben sie a ein: ");
-
 				double a = IO.readDouble();
 				System.out.print("Geben sie b ein: ");
 				double b = IO.readDouble();
@@ -98,14 +90,15 @@ public class Projekt {
 				System.out.println("===================");
 				pqformel.main(a, b, c);
 				System.out.println();
+				System.out.println("Soll das Programm wiederholt werden? ");
+				weiter=IO.readBoolean();
+				
+			}
+			while (weiter==true);
+			}
 			
 
-			}
-
-
-
 			if (eingabe==3) {
-
 				System.out.println("\r\n"
 						+ " __      __  _    _                           _                             \r\n"
 						+ " \\ \\    / / | |  | |                         | |                            \r\n"
@@ -116,12 +109,8 @@ public class Projekt {
 						+ "                                                                       __/ |\r\n"
 						+ "                                                                      |___/ \r\n"
 						+ "");
-
-				
 				Vektor.Vectoren(eingabe);
 			}
-
-
 
 			if (eingabe==4)
 				System.out.println("\r\n"
@@ -134,12 +123,9 @@ public class Projekt {
 						+ "                                        \r\n"
 						+ "                                        \r\n"
 						+ "");
-
 			{
-
 				Matrizen.Multiplizierung(eingabe);
 			}
-
 			if (eingabe == 5) {
 				System.out.println("\r\n"
 						+ "   _____ _        _   _     _   _ _    \r\n"
@@ -151,18 +137,14 @@ public class Projekt {
 						+ "                                       \r\n"
 						+ "                                       \r\n"
 						+ "");
-
 				Statistik.Statistikrechn(eingabe);
 			}
 			if (eingabe==6) {	
+
 				beenden=false;
 			}
-		}while(beenden==true);
-		System.out.println("============================================================");
-		System.out.println();
-		System.out.println("Das Team Math Gods bedankt sich bei Ihnen recht herzlich");
-		System.out.println();
-		System.out.println("============================================================");
+		}
+		while(beenden==true);
 		System.err.println("\r\n"
 				+ "▀█████████▄     ▄████████    ▄████████ ███▄▄▄▄   ████████▄     ▄████████     ███     \r\n"
 				+ "  ███    ███   ███    ███   ███    ███ ███▀▀▀██▄ ███   ▀███   ███    ███ ▀█████████▄ \r\n"
@@ -174,7 +156,12 @@ public class Projekt {
 				+ "▄█████████▀    ██████████   ██████████  ▀█   █▀  ████████▀    ██████████    ▄████▀   \r\n"
 				+ "                                                                                     \r\n"
 				+ "");
-
+		System.err.println("============================================================");
+		System.err.println("Das Team Math Gods bedankt sich bei Ihnen recht herzlich");
+		System.err.println("============================================================");
 	}
-
 }
+
+
+
+
