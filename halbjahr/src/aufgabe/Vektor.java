@@ -14,8 +14,11 @@ public class Vektor {
 		System.out.println("[18] für Multiplikation zweier Vektoren");
 		System.out.print("Welche Operation wollen sie ausführen?: ");
 		eingabe = IO.readInteger();
+		boolean weiter2=true;
+		
 		
 		if (eingabe==16) {
+			do {
 			System.out.println("Wie viele Werte wollen Sie haben: ");
 			int spalte=IO.readInteger();
 			int [] array = new int[spalte];
@@ -29,9 +32,14 @@ public class Vektor {
 			System.out.println("===================");
 			Vectorrechnung.Multiplikationarray1D(mult, array, zahl);
 			System.out.println();
+			System.out.println("Soll das Programm wiederholt werden? ");
+			weiter2=IO.readBoolean();
 		}
-
+		while (weiter2==true);
+		}
+		
 		if (eingabe==17) {
+			do {
 			System.out.println("Wie viele Werte wollen Sie haben: ");
 			int spalte1=IO.readInteger();
 			int [] array1 = new int[spalte1];
@@ -44,9 +52,14 @@ public class Vektor {
 			System.out.println("================");
 			Vectorrechnung.Additionarray1D(spalte1, array1, array2, summe);
 			System.out.println();
+			System.out.println("Soll das Programm wiederholt werden? ");
+			weiter2=IO.readBoolean();
+		}
+		while (weiter2==true);
 		}
 
 		if(eingabe==18) {
+			do {
 			System.out.println("Wie viele Werte wollen Sie haben: ");
 			int zeile =IO.readInteger();
 			int []array1=new int [zeile];
@@ -59,9 +72,14 @@ public class Vektor {
 			System.out.println("===================");
 			Vectorrechnung.Multiplikatiozweivikarray1D(mult1, array1, array2);
 			System.out.println();
+			System.out.println("Soll das Programm wiederholt werden? ");
+			weiter2=IO.readBoolean();
+		}
+		while (weiter2==true);
+		}
 		}
 		
 		
 	}
 
-}
+
